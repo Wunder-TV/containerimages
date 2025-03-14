@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8.2-fpm@sha256:138b7725a827e5a4bc376c2baed9db5497ee80dbf131dedc5c0c5811b6dd49f8
+FROM docker.io/library/php:8.2.28-fpm@sha256:9e83cf28c5dd3fef0d9edd4f9ba78540873f38be603602bd10f16dd50668a48f
 ARG NODE_VERSION=18
 ENV LC_ALL C.UTF-8
 
