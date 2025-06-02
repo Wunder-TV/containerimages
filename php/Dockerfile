@@ -1,9 +1,9 @@
-FROM docker.io/library/php:8.2-fpm@sha256:138b7725a827e5a4bc376c2baed9db5497ee80dbf131dedc5c0c5811b6dd49f8
+FROM docker.io/library/php:8.2-fpm@sha256:5f4eef4011ea33153ced06c607c0bfa9f688af3331d9ccb2b858bb1195c816cd
 ARG NODE_VERSION=18
 ENV LC_ALL C.UTF-8
 
 COPY --from=ghcr.io/shyim/supervisord:latest@sha256:1531279d119ffb0e4411f1d769026f10dd52916c3078056e81068e4d8586d296 --link /usr/local/bin/supervisord /usr/bin/supervisord
-COPY --from=docker.io/library/caddy:2.8@sha256:60199fbf2046892e0aa4b19c7d3adf71f530c36abc65728627422148a75b3475 --link /usr/bin/caddy /usr/bin/caddy
+COPY --from=docker.io/library/caddy:2.10@sha256:30ccf0cb027e1d06cd6e453c04fc1c8eec665629b22ed69602c14c8a0512ead0 --link /usr/bin/caddy /usr/bin/caddy
 
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
